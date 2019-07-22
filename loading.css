@@ -23,7 +23,7 @@ body{
   @keyframes animate{
     0%{
       color: #484848;
-      tet-shadow: none;
+      text-shadow: none;
     }
     90%{
       color: #484848;
