@@ -5,6 +5,13 @@
     <title>Login Form</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="./login.css">
+
+     <!-- jquery -->
+     <script
+     src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <!-- login js -->
+    <script src="./login.js"></script>
+
   </head>
   <body>
     <div class="contents middle">
@@ -23,7 +30,7 @@
         </div>
 
         <div class="btnBox">
-          <input class="btn" type="button" name="" value="Sign in">
+          <input class="btn signIn" id="sign_in" type="button" name="" value="Sign in">
         </div>
       </div>
 
@@ -34,8 +41,8 @@
           <p>보안서약에 동의하십니까?</p>
         </div>
         <div class=btnBox>
-          <input class="btn" type="button" name="" value="동의">
-          <input class="btn" type="button" name="" value="미동의">
+          <input class="btn agree" type="button" name="" value="동의">
+          <input class="btn disagree" type="button" name="" value="미동의">
         </div>
         
       </div>
