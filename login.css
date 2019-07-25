@@ -101,6 +101,10 @@ body{
 
 .btn:focus{
   outline: none;
+
+  background: #244b8d;
+  color: white;
+  cursor: pointer;
 }
 .btn:hover{
   background: #244b8d;
