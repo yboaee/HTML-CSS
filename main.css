@@ -1,10 +1,30 @@
-*{
+body{
     padding:0;
     margin: 0;
     font-family: sans-serif;
+    background: #EFF5FB;
 }
-.demo{
-    margin-top: 254px;
+.container{
+
+    width: 1500px;
+}
+.wrapper{
+    float: left;
+}
+.row{
+    float: left;
+    position: relative;
+    margin: 25px;
+    padding: 10px 20px;
+    background: white;
+    box-shadow: 10px 25px 50px rgba(0,0,0,.2);
+}
+.main-stat{
+    padding: 35px;
+    height: 350px;
+}
+.invest-amount{
+    width: 55%;
 }
 .counter{
     background: #c42252;
@@ -12,7 +32,6 @@
     position: relative;
     width: 260px;
     height: 280px;
-
 }
 
 .counter .counter-content{
@@ -73,4 +92,28 @@
 }
 .counter .value-option{
     font-size: 12px;
+}
+.chart-summary{
+    float: left;
+}
+.sub-title{
+    font-size: 15px;
+    color: #A4A4A4;
+}
+.sub-value{
+    font-size: 20px;
+    margin-top: -5px;
+    margin-bottom: 15px;
+}
+.current > .sub-value{
+    color: #c42252;
+    font-size: 25px;
+    font-weight: bold;
+}
+p{
+    padding-right: 50px;
+    /* display: inline; */
+}
+.investor{
+    width: 25%;
 }

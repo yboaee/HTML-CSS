@@ -8,6 +8,8 @@
 
         <!-- jQuery -->
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -16,16 +18,17 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
+        <!-- css -->
         <link rel="stylesheet" href="./main.css">
         <!-- js -->
         <script src="./main.js"></script>
+        
 
     </head>
     <body>
-
-        <div class="demo">
             <div class="container">
                 <div class="row">
+                    <div class="main-stat">
                     <div class="col-md-3">
                         <div class="counter">
                             <div class="counter-content">
@@ -70,11 +73,38 @@
                                 </div>
                             </div>
                         </div>        
-    
+                    </div>
+                </div>               
+            </div>
+        
+            <div class="container">
+                <div class="row invest-amount">
+                    <div class="chart-summary">
+                        <h3>투자 금액</h1>
+                        <div class="chart-summary current">
+                            <p class="sub-title">Current week</p>
+                            <p class="sub-value">₩<span>2000000</span></p>           
+                        </div>
+                        <div class="chart-summary previous">
+                            <p class="sub-title">Previous week</p>
+                            <p class="sub-value">₩<span>1000000</span></p>
+                        </div>
+                    </div>
+                    <div class="chart">     
+                        <canvas id="myChart" width="800" height="400"></canvas>  
+                        <script src="./chart.js"></script>
+                    </div>
+                </div>
 
+                <div class="row investor">
+                    <div class="chart-summary">
+                        <h3>금주 투자자 증감률</h3>
+                    </div>
                 </div>
             </div>
-        </div>
+        
+
+       
     </body>
 
 </html>
