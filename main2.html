@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
+
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
         <style>
             body{
                 margin: 0;
@@ -11,14 +19,14 @@
             .row{
                 margin: 2% 5%;
             }
-            .content{
+            .contents{
                 float: left;
                 margin: 1%;
                 box-shadow: 10px 25px 50px rgba(0,0,0,.2);
             }
             .stat{
                 width: 98%;
-                height: 200px;
+                height: 250px;
             }
             .graph{
                 width: 48%;
@@ -32,20 +40,45 @@
                 width: 23%;
                 height: 400px;
             }
-            .content:hover{
+            .contents:hover{
                 box-shadow: 20px 50px 100px rgba(0,0,0,.5);
+            }
+            .counter{
+                margin: 2%;
+                width: 21%;
+                height: 80%;
+                float: left;
+                background: #c42252;
+                text-align: center;
+                position: relative;
             }
         </style>
 
     </head>
     <body>
         <div class="row">
-            <div class="content stat">1111</div>
+            <div class="contents stat">
+
+                <div class="counter">
+                    <div class="col-md-3">
+                        <i class="counter-icon fa fa-users"></i>
+                        <span class="counter-value">101</span>
+                        <span class="value-option"> </span>
+                        <h3 class="title">투자 회원수</h3>
+                
+                    </div>
+                </div>
+
+                <div class="counter">2</div>
+                <div class="counter">3</div>
+                <div class="counter">4</div>
+
+            </div>
         </div>
         <div class="row">
-            <div class="content graph">222</div>
-            <div class="content diagram">333</div>
-            <div class="content diagram2">444</div>
+            <div class="contents graph">222</div>
+            <div class="contents diagram">333</div>
+            <div class="contents diagram2">444</div>
         </div>
 
 
