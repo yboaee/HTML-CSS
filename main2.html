@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="ko">
     <head>
+        <!-- fontawesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        
+        <!-- chart.js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -8,6 +13,9 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+        <!-- js -->
+        <script src="./main.js"></script>
 
         <style>
             body{
@@ -17,40 +25,175 @@
                 background: #EFF5FB;
             }
             .row{
-                margin: 2% 5%;
+                margin: 1% 15%;
             }
             .contents{
                 float: left;
-                margin: 1%;
+                margin: 0% 1%;
                 box-shadow: 10px 25px 50px rgba(0,0,0,.2);
+                background: #fff;
             }
             .stat{
                 width: 98%;
-                height: 250px;
-            }
-            .graph{
-                width: 48%;
-                height: 400px;
-            }
-            .diagram{
-                width: 23%;
-                height: 400px;
-            }
-            .diagram2{
-                width: 23%;
-                height: 400px;
             }
             .contents:hover{
                 box-shadow: 20px 50px 100px rgba(0,0,0,.5);
             }
+            .counters{
+                padding: 2% 4%;
+            }
             .counter{
-                margin: 2%;
-                width: 21%;
-                height: 80%;
-                float: left;
-                background: #c42252;
+                margin: 1%;
+                width: 22.5%;
                 text-align: center;
+                display: inline-block;
+                background: #c42252;
+                /* word-break: break-all; */
+                min-width: 220px;
+                position: static;
+                top: 50%;
+                left: 50%;
+                transform: translate(0%, 0%);
+            }
+            .counter:before,
+            .counter:after,
+            .counter .counter-content:before,
+            .counter .counter-content:after{
+                content: "";
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: white;
+                position: absolute;
+                box-shadow: inset 0 2px 2px #000;
+                top: 15px;
+                left: 15px;
+
+            }
+            .counter:after{
+                left: auto;
+                right: 15px;
+            }
+            .counter .counter-content:before,
+            .counter .counter-content:after{
+                box-shadow: inset 0 -2px 2px #000;
+                top: auto;
+                bottom: 15px;
+            }
+            .counter .counter-content:after{
+                left: auto;
+                bottom: 15px;
+                right: 15px;
+            }
+            .counter .counter-content{
+                width: 100%;
+                padding: 30px 10px 50px;
+                color: white;
                 position: relative;
+            }
+            .counter .counter-icon{
+                display: inline-block;
+                font-size: 25px;
+                margin-bottom: 15px;
+                border: 2px solid white;
+                padding: 5px;
+                border-radius: 50px;
+                width: 50px;
+                height: 50px;
+                line-height: 35px;
+            }
+            .counter .counter-value{
+                display: block;
+                font-size: 50px;
+                margin-bottom: 0px;
+            }
+            .counter .value-option{
+                font-size: 12px;
+            }
+            .counter .title{
+                font-size: 20px;
+                font-weight: bold;
+            }
+            
+            /* 투자 금액 */
+            .graph{
+                width: 48%;
+                padding: 2%;
+            }
+            .graph .chart-summary{
+                float: left;
+                margin-right: 60px;
+                margin-bottom: 10px;
+            }
+            .graph .sub-title{
+                font-size: 15px;
+                color: #A4A4A4;
+            }
+            .graph .sub-value{
+                font-size: 20px;
+                margin-top: -5px;
+                margin-bottom: 15px;
+            }
+            .graph .current > .sub-value{
+                color: #c42252;
+                font-weight: bold;
+            }
+            /* 투자자 증감률 */
+            .doughnut{
+                width: 23%;
+                padding: 2%;
+                /* height: 500px; */
+            }
+            .doughnut .chart-summary{
+                width: 100%;
+                float: left;
+                margin-right: 60px;
+                margin-bottom: 10px;
+            }
+            .doughnut p{
+                display: inline-block;
+                color: #A4A4A4;
+            }
+            .doughnut .sub-value{
+                float: right;
+                
+            }
+            .doughnut .current{
+                font-weight: bold;
+                font-size: 20px;
+                color: #000000;
+            }
+            
+            /* 투자액 증감률 */
+            .doughnut2{
+                width: 23%;
+                padding: 2%;
+                /* height: 500px; */
+                background: #3BD98F;
+                color: #FFFFFF;
+            }
+            .doughnut2 .chart-summary{
+                width: 100%;
+                float: left;
+                margin-right: 60px;
+                margin-bottom: 10px;
+            }
+            .doughnut2 p{
+                display: inline-block;
+                color: #F2F2F2;
+            }
+            .doughnut2 .sub-value{
+                float: right;
+                
+            }
+            .doughnut2 .current{
+                font-weight: bold;
+                font-size: 20px;
+                color: #000000;
+            }
+            /* 실시간 투자랭킹 */
+            .invest-ranking{
+                width: 48%;
             }
         </style>
 
@@ -58,27 +201,96 @@
     <body>
         <div class="row">
             <div class="contents stat">
+                <div class="counters">
 
-                <div class="counter">
-                    <div class="col-md-3">
-                        <i class="counter-icon fa fa-users"></i>
-                        <span class="counter-value">101</span>
-                        <span class="value-option"> </span>
-                        <h3 class="title">투자 회원수</h3>
-                
+                    <div class="counter">
+                        <div class="counter-content">
+                            <i class="counter-icon fa fa-users"></i>
+                            <span class="counter-value">30</span>
+                            <span class="value-option">단위: 명</span>
+                            <h3 class="title">신규 가입자수</h3>
+                        </div>
                     </div>
+
+                    <div class="counter">
+                        <div class="counter-content">
+                            <i class="counter-icon fa fa-users"></i>
+                            <span class="counter-value">101</span>
+                            <span class="value-option">단위: 명</span>
+                            <h3 class="title">투자 회원수</h3>
+                        </div>
+                    </div>
+
+                    <div class="counter">
+                        <div class="counter-content">
+                            <i class="counter-icon fa fa-hand-holding-usd"></i>
+                            <span class="counter-value">12345</span>
+                            <span class="value-option">단위: 만원</span>
+                            <h3 class="title">최근투자금액</h3>
+                        </div>
+                    </div>
+
+                    <div class="counter">
+                        <div class="counter-content">
+                            <i class="counter-icon fa fa-money-bill-alt"></i>
+                            <span class="counter-value">12345678</span>
+                            <span class="value-option">단위: 만원</span>
+                            <h3 class="title">누적투자금액</h3>
+                        </div>
+                    </div>
+
                 </div>
-
-                <div class="counter">2</div>
-                <div class="counter">3</div>
-                <div class="counter">4</div>
-
             </div>
         </div>
         <div class="row">
-            <div class="contents graph">222</div>
-            <div class="contents diagram">333</div>
-            <div class="contents diagram2">444</div>
+            <div class="contents graph">
+
+                <div class="chart-summary">
+                    <h3>투자 금액</h3>
+                    <div class="chart-summary current">
+                        <p class="sub-title">Current week</p>
+                        <p class="sub-value">₩<span>2000000</span></p>           
+                    </div>
+                    <div class="chart-summary previous">
+                        <p class="sub-title">Previous week</p>
+                        <p class="sub-value">₩<span>1000000</span></p>
+                    </div>
+                </div>
+                <div class="chart">     
+                    <canvas id="lineChart" width="700" height="400"></canvas>  
+                    <script src="./chart.js"></script>
+                </div>
+
+            </div>
+            <div class="contents doughnut">
+
+                <div class="chart-summary">
+                    <h3>투자자 증감률</h3>
+                    <p class="sub-title">(전주 대비)</p>
+                    <p class="sub-value"><span class="current">200</span>/220</p>  
+                </div>
+                <div class="chart">
+                    <canvas id="doughnutChart" width="500" height="400"></canvas>  
+                    <script src="./chart.js"></script>
+                </div>
+
+            </div>
+            <div class="contents doughnut2">
+
+                <div class="chart-summary">
+                    <h3>투자액 증감률</h3>
+                    <p class="sub-title">(전주 대비)</p>
+                    <p class="sub-value"><span class="current">&nbsp;</span></p> 
+                </div>
+                <div class="chart">
+                    <canvas id="doughnut2Chart" width="500" height="400"></canvas>  
+                    <script src="./chart.js"></script>
+                </div>
+            </div>
+            <div class="contents invest-ranking">
+                123
+            </div>
+
         </div>
 
 
