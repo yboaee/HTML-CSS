@@ -2,13 +2,10 @@
 <html lang="ko">
     <head>
         <meta charset="UTF-8">
-        <title>main</title>
 
         <!-- fontawesome -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-
-        <!-- jQuery -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        
         <!-- chart.js -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
 
@@ -19,93 +16,250 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
-        <!-- css -->
-        <link rel="stylesheet" href="./main.css">
         <!-- js -->
         <script src="./main.js"></script>
-        
+        <!-- css -->
+        <link rel="stylesheet" href="./main.css">
+
+        <script src="./navbar.js"></script>
+        <link rel="stylesheet" href="./navbar.css">
 
     </head>
     <body>
-            <div class="container">
-                <div class="row">
-                    <div class="main-stat">
-                    <div class="col-md-3">
+
+        <div class="includeNavbar">
+            <i class="fa fa-bars toggle_menu"></i>
+
+            <div class="sidebar_menu">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+
+        <div class="wrapper">
+            <div class="row">
+                <div class="contents main-stat">
+                    <div class="counters">
+
                         <div class="counter">
                             <div class="counter-content">
-                                <i class="counter-icon fa fa-user">
-                                </i>
-                                <span class="counter-value">343</span>
-                                <span class="value-option"> </span>
+                                <i class="counter-icon fa fa-users"></i>
+                                <span class="counter-value">30</span>
+                                <span class="value-option">단위: 명</span>
                                 <h3 class="title">신규 가입자수</h3>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                            <div class="counter">
-                                <div class="counter-content">
-                                    <i class="counter-icon fa fa-users">
-                                    </i>
-                                    <span class="counter-value">101</span>
-                                    <span class="value-option"> </span>
-                                    <h3 class="title">투자 회원수</h3>
-                                </div>
+
+                        <div class="counter">
+                            <div class="counter-content">
+                                <i class="counter-icon fa fa-users"></i>
+                                <span class="counter-value">101</span>
+                                <span class="value-option">단위: 명</span>
+                                <h3 class="title">투자 회원수</h3>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="counter">
-                                <div class="counter-content">
-                                    <i class="counter-icon fa fa-hand-holding-usd">
-                                    </i>
-                                    <span class="counter-value">12345</span>
-                                    <span class="value-option">단위: 만원</span>
-                                    <h3 class="title">최근투자금액</h3>
-                                </div>
+
+                        <div class="counter">
+                            <div class="counter-content">
+                                <i class="counter-icon fa fa-hand-holding-usd"></i>
+                                <span class="counter-value">12345</span>
+                                <span class="value-option">단위: 만원, 일주일</span>
+                                <h3 class="title">최근투자금액</h3>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="counter">
-                                <div class="counter-content">
-                                    <i class="counter-icon fa fa-money-bill-alt">
-                                    </i>
-                                    <span class="counter-value">12345678</span>
-                                    <span class="value-option">단위: 만원</span>
-                                    <h3 class="title">누적투자금액</h3>
-                                </div>
+
+                        <div class="counter">
+                            <div class="counter-content">
+                                <i class="counter-icon fa fa-money-bill-alt"></i>
+                                <span class="counter-value">12345678</span>
+                                <span class="value-option">단위: 만원</span>
+                                <h3 class="title">누적투자금액</h3>
                             </div>
-                        </div>        
+                        </div>
+
                     </div>
-                </div>               
+                </div>
             </div>
-        
-            <div class="container">
-                <div class="row invest-amount">
+            <div class="row">
+                <div class="contents graph">
+
                     <div class="chart-summary">
-                        <h3>투자 금액</h1>
+                        <h3>투자 금액</h3>
                         <div class="chart-summary current">
                             <p class="sub-title">Current week</p>
-                            <p class="sub-value">₩<span>2000000</span></p>           
+                            <p class="sub-value">₩<span>2,000,000</span></p>           
                         </div>
                         <div class="chart-summary previous">
                             <p class="sub-title">Previous week</p>
-                            <p class="sub-value">₩<span>1000000</span></p>
+                            <p class="sub-value">₩<span>1,000,000</span></p>
                         </div>
                     </div>
                     <div class="chart">     
-                        <canvas id="lineChart" width="800" height="400"></canvas>  
+                        <canvas id="lineChart" width="700" height="400"></canvas>  
                         <script src="./chart.js"></script>
                     </div>
                 </div>
 
-                <div class="row investor">
+                <div class="contents doughnut">
+
                     <div class="chart-summary">
-                        <h3>금주 투자자 증감률</h3>
+                        <h3>투자자 증감률</h3>
+                        <p class="sub-title">(전주 대비)</p>
+                        <p class="sub-value"><span class="current">200</span>/220</p>  
+                    </div>
+                    <div class="chart">
+                        <canvas id="doughnutChart" width="500" height="400"></canvas>  
+                        <script src="./chart.js"></script>
+                    </div>
+                </div>
+
+                <div class="contents doughnut2">
+                    <div class="chart-summary">
+                        <h3>투자액 증감률</h3>
+                        <p class="sub-title">(전주 대비)</p>
+                        <p class="sub-value"><span class="current">&nbsp;</span></p> 
+                    </div>
+                    <div class="chart">
+                        <canvas id="doughnut2Chart" width="500" height="400"></canvas>  
+                        <script src="./chart.js"></script>
+                    </div>
+                </div>
+
+                <div class="contents amount-invest-per-person">
+                    <div class="chart-summary">
+                        <i class="fas fa-money-bill-wave"></i>
+                        <h5>1인당 평균 투자금액</h5>
+                        <p class="sub-value"><span>₩</span>580,000</p>
+                    </div>
+                </div>
+
+                <div class="contents return_investment_rate">
+                    <div class="chart-summary">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <h5>투자전환율</h5>
+                        <p class="sub-value">15.3<span>%</span></p>
                     </div>
                 </div>
             </div>
-        
 
-       
+            <div class="row">
+                <div class="contents goods">
+                    <div class="closed-goods">
+                        <h3>마감예정상품</h3>
+                        <p class="sub-title">7일 이내</p>
+                        <table class="goods-table">
+                            <tr>
+                                <td class="goods-name">[제111호] 어쩌구 저쩌구 이러쿵 저러쿵 3차</td>
+                                <td class="deadline goods-value"><img id="dday-img" src="./img/today.png"/></td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제222호] 어쩌구 저쩌구</td>
+                                <td class="deadline goods-value"><img id="dday-img" src="./img/today.png"/></td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제333호] 어쩌구 저쩌구</td>
+                                <td class="deadline goods-value">D-3</td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제444호] 어쩌구 저쩌구</td>
+                                <td class="deadline goods-value">D-3</td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제555호] 어쩌구 저쩌구</td>
+                                <td class="deadline goods-value">D-6</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="contents goods">
+                    <div class="overdue-goods">
+                        <h3>연체상품</h3>
+                        <p class="show-all">Show-all</p>
+                        <table class="goods-table">
+                            <tr>
+                                <td class="goods-name">[제111호] 어쩌구 저쩌구 이러쿵 저러쿵 3차</td>
+                                <td class="remaining-amount goods-value">123,400,000 원</td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제222호] 어쩌구 저쩌구</td>
+                                <td class="remaining-amount goods-value">123,400,000 원</td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제333호] 어쩌구 저쩌구</td>
+                                <td class="remaining-amount goods-value">23,400,000 원</td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제444호] 어쩌구 저쩌구</td>
+                                <td class="remaining-amount goods-value">123,400,000 원</td>
+                            </tr>
+                            <tr>
+                                <td class="goods-name">[제555호] 어쩌구 저쩌구</td>
+                                <td class="remaining-amount goods-value">123,400,000 원</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="contents account">
+                    <div class="repayment">
+                        <h3>오늘의 원리금 상환</h3>
+                        <p class="show-all">Show-all</p>
+                        <table class="repayment-table">
+                            <thead>
+                                <tr>
+                                    <td class="goods-name culumn-name">상품명</td>
+                                    <td class="repayment-round culumn-name">차수</td>
+                                    <td class="repayment-principle culumn-name">상환원금</td>
+                                    <td class="repayment-interest culumn-name">상환이자</td>
+                                    <td class="repayment-status culumn-name">지급상태</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="goods-name">[제111호] 어쩌구 저쩌구 이러쿵 저러쿵</td>
+                                    <td class="repayment-round">15 차</td>
+                                    <td class="repayment-principle">100,000,000 원</td>
+                                    <td class="repayment-interest">2,500,000 원</td>
+                                    <td class="repayment-status"><img class="ispaid-img" src="./img/paid.png"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="goods-name">[제222호] 어쩌구 저쩌구</td>
+                                    <td class="repayment-round">1 차</td>
+                                    <td class="repayment-principle">80,000 원</td>
+                                    <td class="repayment-interest">25,000 원</td>
+                                    <td class="repayment-status"><img class="ispaid-img" src="./img/paid.png"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="goods-name">[제333호] 궁시렁궁시렁</td>
+                                    <td class="repayment-round">13 차</td>
+                                    <td class="repayment-principle">132,080 원</td>
+                                    <td class="repayment-interest">48,040 원</td>
+                                    <td class="repayment-status"><img class="ispaid-img" src="./img/paid.png"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="goods-name">[제444호] 이러쿵 저러쿵</td>
+                                    <td class="repayment-round">5 차</td>
+                                    <td class="repayment-principle">84,200 원</td>
+                                    <td class="repayment-interest">24,880 원</td>
+                                    <td class="repayment-status"><img class="ispaid-img" src="./img/unpaid.png"/></td>
+                                </tr>
+                                <tr>
+                                    <td class="goods-name">[제555호] 어쩌구 저쩌구</td>
+                                    <td class="repayment-round">3 차</td>
+                                    <td class="repayment-principle">- 원</td>
+                                    <td class="repayment-interest">1,830,000 원</td>
+                                    <td class="repayment-status"><img class="ispaid-img" src="./img/unpaid.png"/></td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
-
 </html>

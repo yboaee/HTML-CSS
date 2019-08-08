@@ -1,45 +1,64 @@
 body{
-    padding:0;
     margin: 0;
+    padding: 0;
     font-family: sans-serif;
     background: #EFF5FB;
 }
-.container{
-
-    width: 1500px;
+.includeNavbar{
+    margin: 0;
+    padding: 0;
+    z-index: 1;
 }
 .wrapper{
-    float: left;
+    width: 98%;
+    /* width: 1300px; */
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 .row{
+    margin: 0% 1%;
+    max-width: 1300px;
+}
+.contents{
     float: left;
-    position: relative;
-    margin: 25px;
-    padding: 10px 20px;
-    background: white;
+
+    margin: 1% 1%;
     box-shadow: 10px 25px 50px rgba(0,0,0,.2);
+    background: #fff;
 }
+.show-all{
+    font-size: 15px;
+    color: #2E9AFe;
+    text-align: right;
+    padding-right: 3%;
+    cursor: pointer;
+}
+/* 통계관련 */
 .main-stat{
-    padding: 35px;
-    height: 350px;
+    width: 98%;
 }
-.invest-amount{
-    width: 55%;
+.contents:hover{
+    box-shadow: 20px 50px 100px rgba(0,0,0,.5);
+}
+.counters{
+    padding: 2% 4%;
 }
 .counter{
-    background: #c42252;
+    margin: 1%;
+    width: 22.5%;
     text-align: center;
-    position: relative;
-    width: 260px;
-    height: 280px;
+    display: inline-block;
+    background: #D83269;
+    word-break: break-all;
+    min-width: 200px;
+    position: static;
+    top: 50%;
+    left: 50%;
+    transform: translate(0%, 0%);
 }
-
-.counter .counter-content{
-    padding: 30px 20px 50px;
-    color: white;
-    position: relative;
-}
-
 .counter:before,
 .counter:after,
 .counter .counter-content:before,
@@ -70,6 +89,12 @@ body{
     bottom: 15px;
     right: 15px;
 }
+.counter .counter-content{
+    width: 100%;
+    padding: 30px 10px 50px;
+    color: white;
+    position: relative;
+}
 .counter .counter-icon{
     display: inline-block;
     font-size: 25px;
@@ -83,37 +108,190 @@ body{
 }
 .counter .counter-value{
     display: block;
-    font-size: 50px;
+    font-size: 40px;
     margin-bottom: 0px;
+}
+.counter .value-option{
+    font-size: 12px;
 }
 .counter .title{
     font-size: 20px;
     font-weight: bold;
 }
-.counter .value-option{
-    font-size: 12px;
+
+/* 투자 금액 */
+.graph{
+    width: 48%;
+    padding: 2%;
 }
-.chart-summary{
+.graph .chart-summary{
     float: left;
+    margin-right: 60px;
+    margin-bottom: 10px;
 }
-.sub-title{
+.graph .sub-title{
     font-size: 15px;
     color: #A4A4A4;
 }
-.sub-value{
+.graph .sub-value{
     font-size: 20px;
     margin-top: -5px;
     margin-bottom: 15px;
 }
-.current > .sub-value{
+.graph .current > .sub-value{
     color: #c42252;
+    font-weight: bold;
+}
+/* 투자자 증감률 */
+.doughnut{
+    width: 23%;
+    padding: 2%;
+    /* height: 500px; */
+}
+.doughnut .chart-summary{
+    width: 100%;
+    float: left;
+    margin-right: 60px;
+    margin-bottom: 10px;
+}
+.doughnut p{
+    display: inline-block;
+    color: #A4A4A4;
+}
+.doughnut .sub-value{
+    float: right;
+    
+}
+.doughnut .current{
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+}
+
+/* 투자액 증감률 */
+.doughnut2{
+    width: 23%;
+    padding: 2%;
+    /* height: 500px; */
+    background: #3BD98F;
+    color: #FFFFFF;
+}
+.doughnut2 .chart-summary{
+    width: 100%;
+    float: left;
+    margin-right: 60px;
+    margin-bottom: 10px;
+}
+.doughnut2 .sub-title{
+    display: inline-block;
+    color: #F2F2F2;
+}
+.doughnut2 .sub-value{
+    float: right;
+    
+}
+.doughnut2 .current{
+    font-weight: bold;
+    font-size: 20px;
+    color: #000000;
+}
+/* 실시간 투자랭킹 */
+.amount-invest-per-person{
+    width: 23%;
+    padding: 2%;
+}
+.amount-invest-per-person h5{
+    color: #A4A4A4;
+}
+.amount-invest-per-person .sub-value{
     font-size: 25px;
     font-weight: bold;
 }
-p{
-    padding-right: 50px;
-    /* display: inline; */
+.amount-invest-per-person i{
+    float: right;
+    font-size: 40px;
+    color: #3BD98F;
 }
-.investor{
-    width: 25%;
+/* 투자전환율 */
+.return_investment_rate{
+    width: 23%;
+    padding: 2%;
+}
+.return_investment_rate h5{
+    color: #A4A4A4;
+}
+.return_investment_rate .sub-value{
+    font-size: 25px;
+    font-weight: bold;
+}
+.return_investment_rate i{
+    float: right;
+    font-size: 40px;
+    color: #c42252;
+}
+
+/* 상품 */
+.goods{
+    width: 48%;
+    padding: 2%;
+}
+.goods .sub-title{
+    font-size: 15px;
+    color: #A4A4A4;
+}
+.goods-table{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 20px 50px; 
+    font-size: 15px;
+}
+.goods-table .goods-value{
+    text-align: right;
+    font-weight: bold;
+}
+.goods-table tr, td{
+    border-bottom: 1px solid #E6E6E6;
+    padding: 10px;
+}
+/* 마감예정상품 */
+.closed-goods .goods-name{
+    width: 70%;
+}
+.closed-goods .goods-value{
+    text-align: center;
+    color: #DF0101;
+}
+#dday-img{
+    width: 50px;
+}
+/* 연체상품 */
+
+/* 오늘의 원리금 상환 */
+.account{
+    width: 98%;
+    padding: 2%;
+}
+.repayment-table{
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    border-spacing: 20px 50px; 
+    font-size: 15px;
+}
+.repayment-table .repayment-round, .repayment-principle, .repayment-interest{
+    text-align: right;
+}
+.repayment-table .repayment-status{
+    text-align: center;
+}
+.culumn-name{
+    color: #A4A4A4;
+}
+.repayment-table th, td{
+    border-bottom: 1px solid #E6E6E6;
+    padding: 10px;
+}
+.ispaid-img{
+    width: 20px;
 }
