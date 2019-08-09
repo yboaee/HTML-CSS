@@ -16,7 +16,7 @@
     opacity: 1;  /**/
     transition: all 0.9s ease-in-out;
 }
-.sidebar_menu{
+.main-nav{
     margin: 0;
     position: fixed; 
     width: 250px;
