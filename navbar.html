@@ -1,23 +1,46 @@
 <!DOCTYPE html>
 <html lang="ko">
-    <title>Responsive Sidebar</title>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <!-- js -->
-    <script src="./navbar.js"></script>
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="./sidebar.css">
     <head>
+        <title>Responsive Sidebar</title>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <!-- js -->
+        <script src="./navbar.js"></script>
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="./navbar.css">
+
+
+        <style>
+        .row{
+            /* margin: 100px; */
+
+            width: 50%;
+            height: 500px;
+            background: red;
+            
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 10%);
+
+        }
+        </style>
 
     </head>
     <body>
-        <i class="fa fa-bars toggle_menu"></i>
+        <div>
+            <i class="fa fa-bars toggle_menu"></i>
 
-        <div class="sidebar_menu">
-            <i class="fa fa-times"></i>
+            <div class="main-nav">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+        <div class="contents">
+            <div class="row">
+                1234
+            </div>
         </div>
 
     </body>
