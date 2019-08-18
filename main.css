@@ -299,9 +299,9 @@ body{
     width: 20px;
 }
 
-
 /* 미디어쿼리 */
 @media screen and (max-width: 959px) {
+
     .counter{
         min-width: 300px;
     }
@@ -323,5 +323,21 @@ body{
     .return_investment_rate{
         width: 48%;
     }
-    
+}
+@media screen and (max-width: 500px){
+    .doughnut{
+        width: 98%;
+    }
+    .doughnut2{
+        width: 98%;
+    }
+    .amount-invest-per-person{
+        width: 98%;
+    }
+    .return_investment_rate{
+        width: 98%;
+    }
+    .repayment-round, .repayment-principle, .repayment-interest{
+        display: none;
+    }
 }

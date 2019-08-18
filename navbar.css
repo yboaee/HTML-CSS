@@ -74,3 +74,20 @@
     color: white;
     cursor: pointer;
 }
+
+@media screen and (max-width: 500px){
+    .toggle_menu{
+        position: fixed;
+        top: 0;
+        right: 0;
+        float: right;
+        margin-top: 0;
+        color: black;
+        background-color: transparent;
+    }
+    .main-nav{
+        margin-left: -500px;
+        width: 500px;
+        text-align: center;
+    }
+}
