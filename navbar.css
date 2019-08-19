@@ -12,7 +12,7 @@
     color: white;
     cursor: pointer; /**/
     background-color: #648B79;
-    z-index: 1000000; /**/
+    z-index: 2; /**/
     font-size: 2em;
     opacity: 1;  /**/
     transition: all 0.9s ease-in-out;
@@ -37,7 +37,7 @@
     margin-left:10px;
 }
 .fa-times{
-    right: 10px;
+    right: 20px;
     top: 10px;
     opacity: 0.7;
     font-size: 2em;
@@ -47,13 +47,6 @@
     transition: all 0.3s ease-in-out;
 }
 
-.visible_menu{
-    margin-left: 0px;
-}
-.opacity_zero{
-    opacity: 0;
-    transition: all 0.3s ease-in-out;
-}
 
 /* Sidebar */
 .main-nav .menu{
@@ -86,8 +79,17 @@
         background-color: transparent;
     }
     .main-nav{
-        margin-left: -500px;
-        width: 500px;
+        margin-left: -100vw;
+        width: 100vw;
         text-align: center;
+        z-index: 3;
     }
+}
+
+.visible_menu{
+    margin-left: 0px;
+}
+.opacity_zero{
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
 }
